@@ -1,0 +1,358 @@
+body{
+    margin:0;
+    padding: 80px;
+}
+
+/*HEADER*/
+.header{
+
+    margin-top: 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 50px;
+
+    background:white;
+
+}
+
+/*MENU*/
+.menu a{
+    text-decoration:none;
+    color:black;
+
+    margin-left:30px;
+
+    font-weight:bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*LOGO*/
+.logo img{
+    width: 100px;
+    height: auto;
+}
+
+/*TIÊU ĐỀ LỚN*/
+.hero{
+
+    margin-bottom: 200px;
+    
+    text-align: center;
+
+    padding: 0% 20px;
+
+    border: 3px solid #1976d2;
+
+    padding: 30px;
+    
+}
+
+.hero h1{
+    
+    margin-top: 0;
+
+    margin-bottom: 0;
+
+    font-size: 80px;
+
+    color: blue;
+
+    font-family: Arial, sans-serif;
+
+}
+
+.hero h2 {
+
+    margin-top: 0;
+
+    font-size: 24px;
+
+    color: gray;
+
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+
+.main-title {
+    font-size: 48px;
+    font-weight: bold;
+    color:aqua;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.sub-title {
+    border: 1px solid black;
+}
+
+.sub-title h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sub-title p {
+    font-size: 30px;
+}
+
+
+
+
+
+/*KHUNG NGOÀI CỦA ẢNH*/
+.images {
+    text-align: center
+}
+
+.imageTitle{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/*TỪNG ẢNH*/
+.image {
+    display: block;
+    margin: 0 auto;
+
+    max-width: 100%;
+    max-height: 600px;
+
+    width: auto;
+    height: auto;
+}
+
+.dotsWindow {
+    width: 156px;          /* 7 chấm */
+    overflow: hidden;
+    margin: 12px auto 0;
+}
+
+/*PHẦN CHỨA DẤU CHẤM*/
+.dots {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 12px;
+    transition: transform 0.3s;
+}
+
+/*TỪNG DẤU CHẤM*/
+.dot {
+    display:block;
+
+    width:12px;
+    height:12px;
+
+    flex:0 0 12px;
+
+    border-radius:50%;
+    background:#bbb;
+}
+
+.dot.active{
+    background:black;
+}
+
+/*ẢNH HIỆN TẠI/ TỔNG SỐ*/
+.chiSo {
+    margin-top: 10px;
+
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+}
+
+.imageContainer{
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+.nutTruoc,
+.nutTiep{
+
+
+    position:absolute;
+
+    top:50%;
+    transform:translateY(-50%);
+
+    width:56px;
+    height:56px;
+
+    border-radius:50%;
+    border:none;
+
+    background:rgba(0,0,0,.35);
+
+    color:white;
+
+    font-size:34px;
+
+    opacity:0;
+
+    transition:.25s;
+
+    cursor:pointer;
+}
+
+.nutTruoc {
+    left: 20px;
+}
+
+.nutTiep {
+    right: 20px;
+}
+
+.imageContainer:hover .nutTruoc,
+.imageContainer:hover .nutTiep{
+
+    opacity:1;
+
+}
+
+.nutTruoc:hover,
+.nutTiep:hover{
+
+    background:rgba(0,0,0,.6);
+
+}
+
+
+
+
+
+.container {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px; /* Thêm khoảng cách giữa video và danh sách */
+}
+
+.video-area {
+    height: auto;
+    text-align: center;
+    border: 1px solid black;
+    flex: 3;
+    padding: 10px; /* Thêm padding cho đẹp */
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* === THAY ĐỔI CHÍNH: video -> iframe === */
+.video-area iframe {
+    width: 100%;
+    max-height: 700px;
+    /* object-fit: contain; ← BỎ dòng này */
+}
+
+/* === THÊM MỚI: wrapper cho responsive === */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 8px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-list {
+    width: 300px;
+    border: 1px solid black;
+    max-height: 700px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+}
+
+.video-item {
+    padding: 15px;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.video-item:hover {
+    background: #f0f0f0;
+}
+
+.video-item.active {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.nutDong {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    background: #f0f0f0;
+    border-radius: 8px 8px 0 0;
+}
+
+.nutMo {
+    display: none;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    background: #f0f0f0;
+    border-radius: 8px 8px 0 0;
+}
+
+.nutVideoTruoc,
+.nutVideoTiep {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.nutVideoTruoc:hover,
+.nutVideoTiep:hover {
+    background: #0056b3;
+}
+
+.nutVideoTruoc:disabled,
+.nutVideoTiep:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.tenVideo {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
